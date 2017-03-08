@@ -1,3 +1,6 @@
+#!NOTICE theres a problem with the display when you remove a frequency from the list 
+#it wont go away until you save & exit then reload the program we are still working on it
+
 from Tkinter import *
 import os
 import struct
