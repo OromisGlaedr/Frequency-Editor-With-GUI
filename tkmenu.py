@@ -51,7 +51,7 @@ def GetFreqs():
 def DisplayFreqs():
     for index in range(len(freq_array)+1):
         Label(text = '', relief = RIDGE, width = 30).grid(row = index,  column = 0)
-        Label(text = '', bg = '#aaaa55', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
+        Label(text = '', bg = '#aaaacc', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
     for index in range(len(freq_array)):
         Label(text = index+1, relief = RIDGE, width = 30).grid(row = index,  column = 0)
         Label(text = str(freq_array[index]), bg = '#aaaabb', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
