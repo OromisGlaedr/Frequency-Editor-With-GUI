@@ -11,6 +11,22 @@ def about():
    button.pack()
 
 
+def FreqHelp():
+    filewin = Toplevel(root)
+    button = Button(filewin,  text = '''Frequency Editor for the Gnuradio Scanner
+        This program loads the freqtest.dat file,
+        and is capable of editing it. There are 3
+        editing functions:
+        Delete, deletes an entry
+        Change, changes an entry
+        Add, appends an entry
+        There are 3 file functions:
+        Open, opens the file
+        Save, saves the current array
+        Show refreshes the list on screen. ''')
+    button.pack()
+
+
 def RemoveFreq():
 #    fm = int(input('freq to modify: '))  #we want to modify a particular frequency
     fm = tkSimpleDialog.askinteger('remove entry',  'remove entry:', parent = root)
@@ -55,7 +71,7 @@ def DisplayFreqs():
     for index in range(len(freq_array)):
         Label(text = index+1, relief = RIDGE, width = 30).grid(row = index,  column = 0)
         Label(text = str(freq_array[index]), bg = '#aaaabb', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
-        Entry(text = freq_array[index], bg = 'grey', relief = SUNKEN, width = 20).grid(row = index,  column = 2)
+ #       Entry(text = freq_array[index], bg = 'grey', relief = SUNKEN, width = 20).grid(row = index,  column = 2)
  #       freq_array[]
 
 
@@ -99,7 +115,7 @@ editmenu.add_command(label="Change", command=ModifyFreqs)
 
 menubar.add_cascade(label="Edit", menu=editmenu)
 helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="Help Index", command=about)
+helpmenu.add_command(label="Help Index", command=FreqHelp)
 helpmenu.add_command(label="About...", command=about)
 menubar.add_cascade(label="Help", menu=helpmenu)
 
