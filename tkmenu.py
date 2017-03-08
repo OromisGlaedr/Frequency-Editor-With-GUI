@@ -1,6 +1,3 @@
-#!NOTICE theres a problem with the display when you remove a frequency from the list 
-#it wont go away until you save & exit then reload the program we are still working on it
-
 from Tkinter import *
 import os
 import struct
@@ -52,6 +49,9 @@ def GetFreqs():
             DisplayFreqs()
 
 def DisplayFreqs():
+    for index in range(len(freq_array)+1):
+        Label(text = '', relief = RIDGE, width = 30).grid(row = index,  column = 0)
+        Label(text = '', bg = '#aaaa55', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
     for index in range(len(freq_array)):
         Label(text = index+1, relief = RIDGE, width = 30).grid(row = index,  column = 0)
         Label(text = str(freq_array[index]), bg = '#aaaabb', relief = SUNKEN, width = 20).grid(row = index,  column = 1)
