@@ -125,7 +125,7 @@ root = Tk()
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="New", command=MakeNewFile)
-filemenu.add_command(label="Open", command=GetFreqs())
+#filemenu.add_command(label="Open", command=GetFreqs())
 filemenu.add_command(label="Save", command=DumpFreqs)
 filemenu.add_command(label="Show", command=DisplayFreqs())
 
