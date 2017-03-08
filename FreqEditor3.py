@@ -22,7 +22,8 @@ def FreqHelp():
         Delete, deletes an entry
         Change, changes an entry
         Add, appends an entry
-        There are 3 file functions:
+        There are 4 file functions:
+        New, adds as many frequencies as yo want
         Open, opens the file
         Save, saves the current array
         Show refreshes the list on screen. ''')
