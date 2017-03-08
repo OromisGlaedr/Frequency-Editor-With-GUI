@@ -1,3 +1,4 @@
+# Notice this code is python 2.7
 from Tkinter import *
 import os
 import struct
