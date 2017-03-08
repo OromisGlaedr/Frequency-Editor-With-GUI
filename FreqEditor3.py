@@ -10,7 +10,7 @@ freq_array = array('f', [])
 
 def about():
    filewin = Toplevel(root)
-   button = Button(filewin, text="made by\n unclejed & OromisGlaedr")
+   button = Button(filewin, text="made by\n unclejed613 & OromisGlaedr")
    button.pack()
 
 def FreqHelp():
