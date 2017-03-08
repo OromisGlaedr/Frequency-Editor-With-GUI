@@ -90,6 +90,27 @@ def AppendFreqs():
         print(indx+1, +freq_array[indx])
     DisplayFreqs()
 
+def MakeNewFile():
+    freq_array = array('f', [])
+#    entries=input("How Many Entries?  ")
+    entries = simpledialog.askinteger('entries', 'How many entries?',  parent = root)
+#x<11
+#print ("Enter frequencies in Hz, with no decimal points")
+#fout = open("freq.dat", "a")
+#while True:
+    for i in range(0,entries):
+#        print i
+#      freq=input("Frequency ")
+        freq = simpledialog.askfloat('entry', 'enter frequency ' + str(i+1), parent = root)
+        freq_array=array("f",[freq])
+#fout.write(freq)
+ #         frq=float(freq)
+        with open("freqtest.dat", "ab") as x:
+#                 pickle.dump(frq, x)p
+            freq_array.tofile(x)
+    x.close()
+    DisplayFreqs()
+
 def DisplayFreqs():
     for index in range(len(freq_array)+1):
         Label(text = '', relief = RIDGE, width = 30).grid(row = index,  column = 0)
@@ -104,6 +125,7 @@ def DisplayFreqs():
 root = Tk()
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="New", command=MakeNewFile)
 filemenu.add_command(label="Open", command=FreqArrayInit)
 filemenu.add_command(label="Save", command=DumpFreqs)
 filemenu.add_command(label="Show", command=DisplayFreqs)
