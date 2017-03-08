@@ -12,6 +12,7 @@ def about():
 
 
 def RemoveFreq():
+# problem with displaying frequencys after deleting just exit the reload the program and the one you deleted will be gone
 #    fm = int(input('freq to modify: '))  #we want to modify a particular frequency
     fm = tkSimpleDialog.askinteger('remove entry',  'remove entry:', parent = root)
 #    current_freq = freq_array[fm-1]
