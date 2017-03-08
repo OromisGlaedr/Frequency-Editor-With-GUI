@@ -49,6 +49,29 @@ def AppendFreqs():
         DisplayFreqs()
 
 
+def MakeNewFile():
+    freq_array = array('f', [])
+#    entries=input("How Many Entries?  ")
+    entries = tkSimpleDialog.askinteger('entries', 'How many entries?',  parent = root)
+#x<11
+#print ("Enter frequencies in Hz, with no decimal points")
+#fout = open("freq.dat", "a")
+#while True:
+    for i in range(0,entries):
+#        print i
+#      freq=input("Frequency ")
+        freq = tkSimpleDialog.askfloat('entry', 'enter frequency ' + str(i+1), parent = root)
+        freq_array=array("f",[freq])
+#fout.write(freq)
+ #         frq=float(freq)
+        with open("freqtest.dat", "ab") as x:
+#                 pickle.dump(frq, x)p
+            freq_array.tofile(x)
+    x.close()
+    DisplayFreqs()
+
+
+
 def GetFreqs():
     stats = os.stat('freqtest.dat')
     file_size = stats.st_size
@@ -100,6 +123,7 @@ root = Tk()
 
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="New", command=MakeNewFile)
 filemenu.add_command(label="Open", command=GetFreqs())
 filemenu.add_command(label="Save", command=DumpFreqs)
 filemenu.add_command(label="Show", command=DisplayFreqs())
