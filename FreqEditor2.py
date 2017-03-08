@@ -8,7 +8,7 @@ import tkSimpleDialog
 freq_array = array('f', [])
 def about():
    filewin = Toplevel(root)
-   button = Button(filewin, text="made by\n unclejed & OromisGlaedr")
+   button = Button(filewin, text="made by\n unclejed613 & OromisGlaedr")
    button.pack()
 
 
@@ -20,8 +20,9 @@ def FreqHelp():
         editing functions:
         Delete, deletes an entry
         Change, changes an entry
-        Add, appends an entry
-        There are 3 file functions:
+        Append, appends an entry
+        There are 4 file functions:
+        New, adds as many entrys as you want
         Open, opens the file
         Save, saves the current array
         Show refreshes the list on screen. ''')
